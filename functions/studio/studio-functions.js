@@ -8,7 +8,16 @@
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
-
+function reverseCharacters(myVariableName){
+    let strReversed = '';
+    if (typeof(myVariableName)=== "string"){ 
+       strReversed = myVariableName.split('').reverse().join(''); 
+    }
+    if (typeof(myVariableName)=== "number"){ 
+        strReversed =Number(String(myVariableName).split('').reverse().join('')); 
+        }
+return strReversed
+}
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -30,6 +39,13 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+function completeReversal(arr){
+    emptyArray = [];
+    for (let i=0; i<arr.length;i++) {
+        emptyArray[i] =reverseCharacters(arr[i]);  //split the string at each comma, reverse and join with comma	
+	  }
+return emptyArray.reverse();
+}
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
@@ -38,12 +54,31 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
 // Test Function
-
+console.log(reverseCharacters('radar'));
+console.log(completeReversal(arrayTest1));
+console.log(completeReversal(arrayTest2));
+console.log(completeReversal(arrayTest3));
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
 
-// Area of rectangle equal to length x width
+str = 'Functions rock!'
+function funPhrase(word ){
+   if (word.length <= 3){
+   slicedText = word.slice(-1)
+   }
+   else {
+    slicedText = word.slice(0,3)
+    }
+return slicedText
+}
+console.log(`We put the ${funPhrase(str)} in ${str}`)
 
+// Area of rectangle equal to length x width
+function calculateAreaOfRectangle(length, width = length) {
+    let areaOfRectangle = length * width;
+    return areaOfRectangle;
+  }
+  console.log(`The area is ${calculateAreaOfRectangle(3)} cm^2`);
 // 1. Define a function with the required parameters to calculate the area of a rectangle.
 // 2. The function should return the area, NOT print it.
 // 3. Call your area function by passing in two arguments - the length and width.
