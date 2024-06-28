@@ -54,6 +54,13 @@ return emptyArray.reverse();
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
 // Test Function
+console.log(reverseCharacters('apple'));
+console.log(reverseCharacters('LC101'));
+console.log(reverseCharacters('Capitalized Letters'));
+console.log(reverseCharacters('I love the smell of code in the morning.'));
+console.log(reverseCharacters(1234));
+console.log(reverseCharacters('LC101'));
+console.log(reverseCharacters(8675309));
 console.log(reverseCharacters('radar'));
 console.log(completeReversal(arrayTest1));
 console.log(completeReversal(arrayTest2));
@@ -78,7 +85,9 @@ function calculateAreaOfRectangle(length, width = length) {
     let areaOfRectangle = length * width;
     return areaOfRectangle;
   }
-  console.log(`The area is ${calculateAreaOfRectangle(3)} cm^2`);
+  console.log(`The area is ${calculateAreaOfRectangle(2,4)} cm^2`);
+  console.log(`The area is ${calculateAreaOfRectangle(14,7)} cm^2`);
+  console.log(`The area is ${calculateAreaOfRectangle(20)} cm^2`);
 // 1. Define a function with the required parameters to calculate the area of a rectangle.
 // 2. The function should return the area, NOT print it.
 // 3. Call your area function by passing in two arguments - the length and width.
