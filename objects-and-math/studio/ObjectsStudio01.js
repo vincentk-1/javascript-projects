@@ -53,3 +53,30 @@ let candidateF = {
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
 // Code your template literal and console.log statements:
+
+function selectRandomEntry(candidateIds){
+  let selectedCandidates = [];
+  while (selectedCandidates.length<3){
+    let index = Math.floor(Math.random()*candidateIds.length);
+    if (!selectedCandidates.includes(candidateIds[index])){
+    selectedCandidates.push(candidateIds[index]);
+    }
+  }
+  return selectedCandidates;
+}
+
+function crewReports(selectedCandidates,animals) {
+  let crew = [];
+  for (i = 0; i < selectedCandidates.length; i++){
+    for (j = 0; j< animals.length; j++) {
+        if (animals[j].astronautID === selectedCandidates[i]) {
+          crew.push(animals[j].name);
+        }
+      }                                     
+  }
+  return crew;
+}
+
+let crewNames = crewReports(selectRandomEntry(idNumbers),animals);
+
+console.log(`${crewNames[0]}, ${crewNames[1]}, and ${crewNames[2]} are going to space!`)
